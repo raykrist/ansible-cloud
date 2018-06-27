@@ -1,0 +1,8 @@
+---
+# centos7
+custom_packages:
+  oxygen-mono-fonts: {}
+  alsa-lib: {}
+  gtk3: {}
+  GConf2: {}
+  libxkbfile: {} 

@@ -1,0 +1,7 @@
+---
+- src: willshersystems.sshd
+  version: v0.6.2
+  name: sshd
+- src: https://github.com/raykrist/ansible-common
+  version: master
+  name: common

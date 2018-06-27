@@ -1,0 +1,12 @@
+---
+custom_packages:
+  tmux:     {}
+  htop:     {}
+  mlocate:  {}
+custom_users:
+  raymond:
+    group: users
+custom_authorized_keys:
+  raymond: {}
+custom_sudoers:
+  raymond: {}
