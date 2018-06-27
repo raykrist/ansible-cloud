@@ -1,0 +1,12 @@
+- name: Basic common tasks
+  hosts: all
+  gather_facts: false
+  pre_tasks:
+    # Fix for ubuntu only FIXME add OS-check and fixes for other OS
+    - name: Make sure python are installed
+      become: false
+      raw: sudo bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qy python-minimal python-apt)"
+    - name: Gathering Facts    
+      setup:
+  roles:
+    - common
