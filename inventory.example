@@ -1,0 +1,8 @@
+[atom]
+ansible-test-01 ansible_host=127.0.0.1 ansible_user=centos
+
+[docker]
+ansible-test-01 ansible_host=127.0.0.1 ansible_user=centos
+
+[azure]
+ansible-test-01 ansible_host=127.0.0.1 ansible_user=centos
