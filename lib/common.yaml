@@ -6,7 +6,8 @@
     - name: Make sure python are installed
       become: false
       raw: sudo bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qy python-minimal python-apt)"
-    - name: Gathering Facts    
+    - name: Gathering Facts
       setup:
   roles:
     - common
+    - sshd

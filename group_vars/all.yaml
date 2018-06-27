@@ -10,3 +10,8 @@ custom_authorized_keys:
   raymond: {}
 custom_sudoers:
   raymond: {}
+sshd:
+  GSSAPIAuthentication: no
+  X11Forwarding: yes
+  PasswordAuthentication: no
+  AllowAgentForwarding: yes

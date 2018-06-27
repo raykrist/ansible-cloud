@@ -1,2 +1,4 @@
 - import_playbook: common.yaml
-- import_role: terraform
+- hosts: all
+  roles:
+    - terraform
