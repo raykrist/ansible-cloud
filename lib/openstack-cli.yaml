@@ -1,0 +1,5 @@
+- hosts: all
+  tasks:
+    - name: Setup bash completion on centos
+      shell: 'openstack complete | tee /etc/bash_completion.d/openstackclient > /dev/null'
+      when: ansible_distribution == 'CentOS'

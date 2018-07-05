@@ -1,8 +1,9 @@
 ---
 custom_packages:
-  tmux:     {}
-  htop:     {}
-  mlocate:  {}
+  tmux:            {}
+  htop:            {}
+  mlocate:         {}
+  bash-completion: {}
 custom_users:
   raymond:
     group: users

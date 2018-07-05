@@ -5,4 +5,7 @@ custom_yum_repos:
   docker-ce-stable:
     baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
     gpgkey:  https://download.docker.com/linux/centos/gpg
+custom_users:
+  raymond:
+    groups: docker
 
