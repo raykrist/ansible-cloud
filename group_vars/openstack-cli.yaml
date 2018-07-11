@@ -1,0 +1,8 @@
+---
+custom_packages:
+  python2-openstackclient: {}
+custom_yum_repos:
+  rdo-release:
+    baseurl: http://mirror.centos.org/centos/7/cloud/$basearch/openstack-pike/
+    gpgkey:  https://raw.githubusercontent.com/openstack/puppet-openstack_extras/master/files/RPM-GPG-KEY-CentOS-SIG-Cloud
+
