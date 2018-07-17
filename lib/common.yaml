@@ -1,11 +1,16 @@
 - name: Basic common tasks
   hosts: all
   gather_facts: false
+  vars:
+    command:
+      "test -e /usr/bin/python || ( \
+        (test -e /etc/redhat-release && (cat /etc/redhat-release | grep -i fedora && dnf install -y python)) || \
+        (test -e /etc/lsb-release && (apt -qqy update && apt install -qy python-minimal python-apt)) \
+      )"
   pre_tasks:
-    # Fix for ubuntu only FIXME add OS-check and fixes for other OS
     - name: Make sure python are installed
       become: false
-      raw: sudo bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qy python-minimal python-apt)"
+      raw: sudo bash -c "{{command}}"
     - name: Gathering Facts
       setup:
   roles:
