@@ -4,7 +4,7 @@
   vars:
     command:
       "test -e /usr/bin/python || ( \
-        (test -e /etc/redhat-release && (cat /etc/redhat-release | grep -i fedora && dnf install -y python)) || \
+       (test -e /etc/redhat-release && (cat /etc/redhat-release | grep -i fedora && dnf install -y python libselinux-python)) || \
         (test -e /etc/lsb-release && (apt -qqy update && apt install -qy python-minimal python-apt)) \
       )"
   pre_tasks:
