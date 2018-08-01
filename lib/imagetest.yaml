@@ -1,0 +1,54 @@
+- name: Basic common tasks
+  hosts: all
+  gather_facts: false
+  vars:
+    command:
+      "test -e /usr/bin/python || ( \
+       (test -e /etc/redhat-release && (cat /etc/redhat-release | grep -i fedora && dnf install -y python libselinux-python)) || \
+        (test -e /etc/lsb-release && (apt -qqy update && apt install -qy python-minimal python-apt)) \
+      )"
+  pre_tasks:
+    - name: Make sure python are installed
+      become: false
+      raw: sudo bash -c "{{command}}"
+    - name: Gathering Facts
+      setup:
+  tasks:
+    - name: Check yum CentOS 7
+      shell: "yum check-updates -q | tail -n +2 | awk '{print $1}'"
+      args:
+        warn: false
+      register: packages
+      notify: Upgrade pacakges
+      when: ansible_distribution == 'CentOS' and ansible_distribution_major_version > '6'
+    - meta: flush_handlers
+    - name: Check yum for CentOS 6
+      shell: "yum check-update -q | tail -n +2 | awk '{print $1}'"
+      args:
+        warn: false
+      register: packages
+      notify: Upgrade pacakges
+      when: ansible_distribution == 'CentOS' and ansible_distribution_major_version < '7'
+    - meta: flush_handlers
+    - name: Check apt
+      shell: "apt list --upgradable 2> /dev/null | tail -n +2 | awk '{print $1}'"
+      register: packages
+      notify: Upgrade pacakges
+      when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+    - meta: flush_handlers
+    - name: Check dnf
+      shell: "dnf check-update -q | tail -n +2 | awk '{print $1}'"
+      args:
+        warn: false
+      register: packages
+      notify: Upgrade pacakges
+      when: ansible_distribution == 'Fedora'
+    - meta: flush_handlers
+  handlers:
+    - name: Upgrade pacakges
+      debug:
+        msg: "{{ item }}"
+      with_items: "{{ packages.stdout_lines | default('unknown') }}"
+#  roles:
+#    - { role: common, tags: [
+#    - sshd
