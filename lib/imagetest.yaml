@@ -13,6 +13,12 @@
       raw: sudo bash -c "{{command}}"
     - name: Gathering Facts
       setup:
+    - name: Install python-apt on debian
+      apt: name=python-apt state=present
+      when: ansible_distribution == 'Debian'
+    - name: Install python-dnf on fedora
+      dnf: name=python-dnf state=present
+      when: ansible_distribution == 'Fedora'
   tasks:
     - name: Check yum CentOS 7
       shell: "yum check-updates -q | tail -n +2 | awk '{print $1}'"
