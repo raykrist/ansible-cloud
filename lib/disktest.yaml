@@ -1,0 +1,31 @@
+- hosts: all
+  vars:
+    device:      '/dev/sdb'
+    vgname:      'vg_test'
+    lvname:      'lv_test'
+    mount_point: '/data'
+  tasks:
+    - name: installing lvm2
+      apt: name=lvm2 state=present
+      when: ansible_os_family == "Debian"
+    - name: installing lvm2
+      yum: name=lvm2 state=present
+      when: ansible_distribution == 'CentOS'
+    - name: installing lvm2
+      dnf: name=lvm2 state=present
+      when: ansible_distribution == 'Fedora'
+    - name: Create new volume group
+      lvg: vg={{ vgname }} pvs={{ device }} state=present
+    - name: Creating new logical volume
+      lvol: vg={{ vgname }} lv={{ lvname }} size='100%FREE' shrink=no
+    - name: Creating new filesystem on new volume
+      filesystem: fstype=ext4 dev=/dev/{{ vgname }}/{{ lvname }}
+    - name: Create mount point
+      file: path={{ mount_point }} state=directory mode=0755
+    - name: Mounting new filesystem
+      mount: name={{ mount_point }} src=/dev/{{ vgname }}/{{ lvname }} fstype=ext4 state=mounted
+    - name: Write to new filesystem
+      get_url:
+        url: http://download.iaas.uio.no/uh-iaas/rpm/himlarservice-1.0-1.el7.x86_64.rpm
+        dest: "{{ mount_point }}/himlarservice-1.0-1.el7.x86_64.rpm"
+
