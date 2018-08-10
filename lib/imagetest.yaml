@@ -55,6 +55,8 @@
       debug:
         msg: "{{ item }}"
       with_items: "{{ packages.stdout_lines | default('unknown') }}"
+- import_playbook: disktest.yaml
+
 #  roles:
 #    - { role: common, tags: [
 #    - sshd
