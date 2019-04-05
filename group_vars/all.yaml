@@ -20,3 +20,4 @@ sshd:
   X11Forwarding: yes
   PasswordAuthentication: no
   AllowAgentForwarding: yes
+  PermitRootLogin: no
