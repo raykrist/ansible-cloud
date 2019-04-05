@@ -3,7 +3,7 @@
   version: v0.6.2
   name: sshd
 - src: andrewrothstein.terraform
-  version: v2.2.10
+  version: v2.2.16
   name: terraform
 - src: https://github.com/raykrist/ansible-common
   version: master
