@@ -1,4 +1,6 @@
 ---
+terraform_ver: 1.1.5
+ansible_python_interpreter: auto
 custom_packages:
   tmux:            {}
   htop:            {}

@@ -1,9 +1,11 @@
 ---
 - src: willshersystems.sshd
-  version: v0.6.2
+  version: v0.13.0
   name: sshd
+- src: andrewrothstein.unarchive-deps
+  version: v1.2.3
 - src: andrewrothstein.terraform
-  version: v2.2.16
+  version: v2.2.84
   name: terraform
 - src: https://github.com/raykrist/ansible-common
   version: master
