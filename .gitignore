@@ -1,0 +1,7 @@
+lib64
+lib/
+include/
+bin/
+pyvenv.cfg
+.collections/
+.roles/
