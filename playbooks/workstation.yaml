@@ -1,0 +1,10 @@
+- name: Set up a desktop node
+  hosts: workstation
+  become: true
+  roles:
+    - role: common
+      tags: common
+
+    - role: sshd
+      tags: sshd
+
