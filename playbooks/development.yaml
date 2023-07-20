@@ -1,0 +1,9 @@
+- name: Set up a development node
+  hosts: development
+  become: true
+  roles:
+    - role: common
+      tags: common
+
+    - role: sshd
+      tags: sshd
