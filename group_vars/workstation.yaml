@@ -6,9 +6,40 @@ custom_packages:
   awesome-extra: {}
   fd-find: {}
   ripgrep: {}
+  whois: {}
+  vagrant: {}
+  packer: {}
+  terraform: {}
+    #  python3-openstackclient: {}
+  brave-browser: {}
+  signal-desktop: {}
 
-custom_users: {}
+custom_users:
+  st02221: {}
+
 custom_sudoers: {}
+
+custom_apt_repos:
+  hashicorp:
+    repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
+  brave-browser:
+    repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"
+  signal:
+    repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main"
+
+custom_apt_keys:
+  hashicorp:
+    url: 'https://apt.releases.hashicorp.com/gpg'
+    id: '798AEC654E5C15428C8E42EEAA16FCBCA621E701'
+    keyring: '/etc/apt/trusted.gpg.d/hashicorp-archive-keyring.gpg'
+  brave-browser:
+    url: 'https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg'
+    id: 'DBF1A116C220B8C7164F98230686B78420038257'
+    keyring: '/etc/apt/trusted.gpg.d/brave-browser-archive-keyring.gpg'
+  signal:
+    url: 'https://updates.signal.org/desktop/apt/keys.asc'
+    id: 'DBA36B5181D0C816F630E889D980A17457F6FB06'
+    keyring: '/etc/apt/trusted.gpg.d/signal-desktop-keyring.gpg'
 
 custom_authorized_keys:
   raymond@work:
