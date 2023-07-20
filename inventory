@@ -1,0 +1,10 @@
+[login]
+anathema.ukl.uib.no
+
+[workstation]
+rayone ansible_connection=local
+raytwo ansible_connection=local
+
+[development]
+dio.ukl.uib.no
+
