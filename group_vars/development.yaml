@@ -1,5 +1,9 @@
 ---
+remove_cloud_user: false
 custom_packages:
+  python3.11: {}
+  fd-find: {}
+  ripgrep: {}
   packer: {}
   terraform: {}
   python3-openstackclient: {}
