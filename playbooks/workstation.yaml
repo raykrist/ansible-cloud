@@ -4,7 +4,8 @@
   roles:
     - role: common
       tags: common
-
+    - role: neovim
+      tags: neovim
     - role: sshd
       tags: sshd
 

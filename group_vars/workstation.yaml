@@ -1,18 +1,21 @@
 ---
+nvim_install_nerdfonts: true
+
 remove_cloud_user: false
+
 custom_packages:
-  python3.9-venv: {}
   awesome: {}
   awesome-extra: {}
-  fd-find: {}
-  ripgrep: {}
   whois: {}
   vagrant: {}
   packer: {}
   terraform: {}
-    #  python3-openstackclient: {}
+  python3-openstackclient: {}
   brave-browser: {}
   signal-desktop: {}
+  tree: {}
+  mlocate: {}
+  net-tools: {}
 
 custom_users:
   st02221: {}
@@ -58,3 +61,4 @@ sshd:
   PermitRootLogin: 'no'
   AllowUsers: 
   - "st02221"
+  - "{{ hostvars[inventory_hostname].ansible_ssh_user | default(omit) }}"
