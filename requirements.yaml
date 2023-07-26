@@ -4,6 +4,10 @@ roles:
     src: https://github.com/raykrist/ansible-common
     version: master
 
+  - name: neovim
+    src: https://github.com/raykrist/ansible-neovim
+    version: master
+
   - name: sshd
     src: willshersystems.sshd
     version: v0.20.0
@@ -11,3 +15,5 @@ roles:
 collections:
   - name: ansible.posix
     version: 1.5.4
+  - name: community.general
+    version: 7.2.0
