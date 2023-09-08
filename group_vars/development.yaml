@@ -1,12 +1,19 @@
 ---
 remove_cloud_user: false
+enable_autoupdate: true
+
 custom_packages:
-  python3.11: {}
-  fd-find: {}
-  ripgrep: {}
+  xauth: {}
+  tmux: {}
+  vagrant: {}
   packer: {}
   terraform: {}
+  gh: {}
   python3-openstackclient: {}
+  mlocate: {}
+  tree: {}
+  net-tools: {}
+  htop: {}
 
 custom_yum_repos:
   hashicorp:
@@ -19,3 +26,8 @@ custom_yum_repos:
     gpgcheck: true
     gpgkey: https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Cloud
     module_hotfixes: true
+  gh-cli:
+    name: GitHub CLI packages
+    baseurl: https://cli.github.com/packages/rpm
+    gpgcheck: true
+    gpgkey: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x23F3D4EA75716059
