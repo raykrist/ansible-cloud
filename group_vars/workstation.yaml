@@ -16,6 +16,7 @@ custom_packages:
   tree: {}
   mlocate: {}
   net-tools: {}
+  gh: {}
 
 custom_users:
   st02221: {}
@@ -29,6 +30,8 @@ custom_apt_repos:
     repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"
   signal:
     repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main"
+  gh-cli:
+    repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main"
 
 custom_apt_keys:
   hashicorp:
@@ -43,6 +46,10 @@ custom_apt_keys:
     url: 'https://updates.signal.org/desktop/apt/keys.asc'
     id: 'DBA36B5181D0C816F630E889D980A17457F6FB06'
     keyring: '/etc/apt/trusted.gpg.d/signal-desktop-keyring.gpg'
+  gh-cli:
+    url: 'https://cli.github.com/packages/githubcli-archive-keyring.gpg'
+    id: '23F3D4EA75716059'
+    keyring: '/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg'
 
 custom_authorized_keys:
   raymond@work:
