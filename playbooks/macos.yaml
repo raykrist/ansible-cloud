@@ -1,0 +1,7 @@
+- name: Set up a mac os node
+  hosts: macos
+  become: true
+  roles:
+    - role: neovim
+      tags: neovim
+

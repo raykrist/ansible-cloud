@@ -8,3 +8,5 @@ raytwo ansible_connection=local
 [development]
 dio.ukl.uib.no
 
+[macos]
+munin ansible_connection=local
