@@ -13,7 +13,7 @@ custom_sudoers:
 custom_authorized_keys:
   raymond@work:
     user: raymond
-    key:  'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCdT7QHIcmvOtNiTJI8emS0E8YGohzw4tpNKI5VkgY4oPzwcXHKNW+4FNViO+2ikBhf0seGPxtKUlpf0jBfUkMRb95GtzWPQSAOtyGihn4CsQs2mWekwE8jOILJTc6Pi8ht92ai7DSc1Nnv6Uss28rgLoSI9PAo3nXNZEYhG5shJS+Ks1Ut0xw0NT2D/ZYIihMXk2xwbraIYq99xUKJ7zKPHCW/1mMba5gtPTk27Q4wWX5yg+TuBpsvqyKMj1/sJ2KY0dmZhVvFhFMpAUoC5AYxryUXepksYnIiQ5hPUI6oCTLIoV8i67kVfL2FgvX7IkDrrAUw3M2MnPJa63gDXPVUNjJE2v/5/4Ik66N1AE04Jdb8FrplSogG525uSIda3saMoV6R+krlV0UBwml1beaBUHWodKu/ML1CMU1Lpb/vAg2ylIbBQByR/pxGPVeUD001ACb2bUMJmco62468nu27vHiY08QqRpav13wtMxqITGGYsMYslosIwHqd91BYCDVqF1OgfSTYTqBH2SZZcJVpChOSAIB4quBMkIOFwnFpG+mSrEpbprKg5BNXSMIXTiMFb/SH2+r+rNvbY+ssCs+CwjpDdO8PS4W1v3AHXZFrORP7meQR4Xd9mOvsPeMh63UscMpNsGvTentOhunacf6uhkTKut/3skxmlLyiiIPKPQ==  st02221@it010212'
+    key:  'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILmS01dwnGoQcxjR0ZNqSP1e5nRK43buD0rqd4sNkmbu raymond@uib.no'
   raymond@home:
     key:  'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGh8ABoo3nkFSAlTTiWqcTmqUp98uPJP/wNvQzMTsvJ6 raymond@home'
     user: raymond
