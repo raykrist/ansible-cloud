@@ -17,6 +17,14 @@ custom_packages:
   mlocate: {}
   net-tools: {}
   gh: {}
+  insync: {}
+  keychain: {}
+  xscreensaver: {}
+  virt-manager: {}
+  virtualbox-7.0: {}
+  build-essential: {}
+  gcc-12: {}
+  teams-for-linux: {}
 
 custom_users:
   st02221: {}
@@ -32,6 +40,12 @@ custom_apt_repos:
     repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main"
   gh-cli:
     repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main"
+  virtualbox:
+    repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/virtualbox-keyring-2016.gpg] https://download.virtualbox.org/virtualbox/debian jammy contrib"
+  teamsforlinux:
+    repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/teams-for-linux-keyring.gpg] https://repo.teamsforlinux.de/debian/ stable main"
+  insync:
+    repo: "deb http://apt.insync.io/ubuntu jammy non-free contrib"
 
 custom_apt_keys:
   hashicorp:
@@ -50,6 +64,17 @@ custom_apt_keys:
     url: 'https://cli.github.com/packages/githubcli-archive-keyring.gpg'
     id: '23F3D4EA75716059'
     keyring: '/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg'
+  virtualbox:
+    url: 'https://www.virtualbox.org/download/oracle_vbox_2016.asc'
+    id: 'B9F8D658297AF3EFC18D5CDFA2F683C52980AECF'
+    keyring: '/etc/apt/trusted.gpg.d/virtualbox-keyring-2016.gpg'
+  teamsforlinux:
+    url: 'https://repo.teamsforlinux.de/teams-for-linux.asc'
+    id: 'D112747BDF6269C845972E5C2FD80E00E6A6E47D'
+    keyring: '/etc/apt/trusted.gpg.d/teams-for-linux-keyring.gpg'
+  insync:
+    id: 'ACCAF35C'
+    keyserver: 'keyserver.ubuntu.com'
 
 custom_authorized_keys:
   raymond@work:
