@@ -14,20 +14,27 @@ custom_packages:
   tree: {}
   net-tools: {}
   htop: {}
+  rsync: {}
+  VirtualBox-7.0: {}
 
 custom_yum_repos:
   hashicorp:
-    name: Hashicorp - $basearch
+    description: Hashicorp - $basearch
     baseurl: https://rpm.releases.hashicorp.com/RHEL/$releasever/$basearch/stable
     gpgkey: https://rpm.releases.hashicorp.com/gpg
   rdo-xena:
-    name: CentOS-$releasever - OpenStack Client xena
+    description: CentOS-$releasever - OpenStack Client xena
     metalink: https://mirrors.centos.org/metalink?repo=centos-cloud-sig-openstackclient-xena-$stream&arch=$basearch&protocol=https,http
     gpgcheck: true
     gpgkey: https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Cloud
     module_hotfixes: true
   gh-cli:
-    name: GitHub CLI packages
+    description: GitHub CLI packages
     baseurl: https://cli.github.com/packages/rpm
     gpgcheck: true
     gpgkey: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x23F3D4EA75716059
+  virtualbox:
+    description: 'Oracle Linux / RHEL / CentOS-$releasever / $basearch - VirtualBox'
+    baseurl: http://download.virtualbox.org/virtualbox/rpm/el/$releasever/$basearch
+    gpgcheck: true
+    gpgkey: https://www.virtualbox.org/download/oracle_vbox_2016.asc
