@@ -24,7 +24,7 @@ custom_yum_repos:
     gpgkey: https://rpm.releases.hashicorp.com/gpg
   rdo-xena:
     description: CentOS-$releasever - OpenStack Client xena
-    metalink: https://mirrors.centos.org/metalink?repo=centos-cloud-sig-openstackclient-xena-$stream&arch=$basearch&protocol=https,http
+    baseurl: https://vault.centos.org/8-stream/cloud/x86_64/openstack-xena/
     gpgcheck: true
     gpgkey: https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Cloud
     module_hotfixes: true
