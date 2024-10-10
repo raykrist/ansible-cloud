@@ -1,0 +1,17 @@
+---
+custom_packages:
+  packer: {}
+  terraform: {}
+  python3-openstackclient: {}
+
+custom_yum_repos:
+  hashicorp:
+    name: Hashicorp - $basearch
+    baseurl: https://rpm.releases.hashicorp.com/RHEL/$releasever/$basearch/stable
+    gpgkey: https://rpm.releases.hashicorp.com/gpg
+  rdo-xena:
+    name: CentOS-$releasever - OpenStack Client xena
+    baseurl: https://vault.centos.org/8-stream/cloud/x86_64/openstack-xena/
+    gpgcheck: true
+    gpgkey: https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Cloud
+    module_hotfixes: true
